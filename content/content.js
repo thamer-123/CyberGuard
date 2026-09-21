@@ -1,4 +1,3 @@
-alert("CyberGuard Loaded");
 (async () => {
   console.group("CYBERGUARD CONTENT SCRIPT");
 
@@ -46,7 +45,8 @@ alert("CyberGuard Loaded");
     // ==========================
 
     if (
-      true
+      result.risk.status === "warning" ||
+      result.risk.status === "dangerous"
     ) {
       console.log("Displaying CyberGuard Banner");
 

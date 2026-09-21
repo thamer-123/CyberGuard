@@ -72,6 +72,10 @@ chrome.tabs.query(
       console.log("Backend Response:");
       console.log(data);
 
+      document.getElementById("analysisTime").textContent = new Date(
+        data.analyzedAt,
+      ).toLocaleString();
+
       // =====================================
       // VALIDATION
       // =====================================
@@ -96,7 +100,6 @@ chrome.tabs.query(
 
       document.getElementById("website").textContent = data.reputation.domain;
 
-
       // =====================================
       // DOMAIN AGE
       // =====================================
@@ -114,7 +117,6 @@ chrome.tabs.query(
       } else {
         console.warn('Missing HTML element: id="createdDate"');
       }
-      
 
       // =====================================
       // PROTOCOL
